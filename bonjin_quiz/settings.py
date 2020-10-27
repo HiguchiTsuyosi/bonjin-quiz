@@ -25,8 +25,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 #SECRET_KEY = 'i717d*_#95crkkwtx(n2&y9%kyogk15$80tvfdrmqaspqo9#ma'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-#DEBUG = True
-DEBUG = False
+DEBUG = True
+#DEBUG = False
 
 ALLOWED_HOSTS = ['*']
 
@@ -117,9 +117,6 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 
-STATICFILES_DIRS = (
-    os.path.join(BASE_DIR, 'static'),
-)
 
 
 # Internationalization
@@ -148,18 +145,18 @@ except ImportError:
     pass
 
 #本番環境時の設定
-if not DEBUG:
+#if not DEBUG:
     #秘密鍵の設定
-    SECRET_KEY = os.environ['SECRET_KEY']
+SECRET_KEY = os.environ['SECRET_KEY']
     #django_herokuの設定
-    import django_heroku 
-    django_heroku.settings(locals())
+import django_heroku 
+django_heroku.settings(locals())
 
 #公式ドキュメントより、DATABASE_URL環境変数の値が解析され、Djangoが理解できるものに変換されます。Djangoとpsqlの接続
 db_from_env = dj_database_url.config(conn_max_age=600,ssl_require=True)
 DATABASES['default'].update(db_from_env)
 
 #cssの設定
-STATIC_ROOT = os.path.join(BASE_DIR,'staticfiles')
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 

@@ -22,7 +22,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'i717d*_#95crkkwtx(n2&y9%kyogk15$80tvfdrmqaspqo9#ma'
+
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -101,10 +101,10 @@ WSGI_APPLICATION = 'bonjin_quiz.wsgi.application'
 DATABASES = {
     'default':{
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'd7g830oiis1nup',
-        'USER': 'tsrkpgigkmfgha',
-        'PASSWORD': '57e112961f675d12e2d9ba988470972b00a9b2924dfcf4d42fa32055efb46160',
-        'HOST': 'ec2-3-220-222-72.compute-1.amazonaws.com',
+        'NAME': 'dd8g7h70omceog',
+        'USER': 'phvhozisfnxjjh',
+        'PASSWORD': 'ff4cc461703980bdd1f20271a9e0e86bb200f39bf0b98a8130da03eab110593b',
+        'HOST': 'ec2-34-231-56-78.compute-1.amazonaws.com',
         'PORT': '5432',
     }
 }

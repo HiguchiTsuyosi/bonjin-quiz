@@ -22,7 +22,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-#SECRET_KEY = 'i717d*_#95crkkwtx(n2&y9%kyogk15$80tvfdrmqaspqo9#ma'
+SECRET_KEY = 'i717d*_#95crkkwtx(n2&y9%kyogk15$80tvfdrmqaspqo9#ma'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -90,10 +90,10 @@ WSGI_APPLICATION = 'bonjin_quiz.wsgi.application'
 DATABASES = {
     'default':{
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'quiz_user',
-        'USER': 'admin',
-        'PASSWORD': 'password',
-        'HOST': 'localhost',
+        'NAME': 'quize_user',
+        'USER': 'postgres',
+        'PASSWORD': 'mecmecmec',
+        'HOST': '127.0.0.1',
         'PORT': '5432',
     }
 }
@@ -145,12 +145,12 @@ except ImportError:
     pass
 
 #本番環境時の設定
-#if not DEBUG:
+if not DEBUG:
     #秘密鍵の設定
-SECRET_KEY = os.environ['SECRET_KEY']
+    SECRET_KEY = os.environ['SECRET_KEY']
     #django_herokuの設定
-import django_heroku 
-django_heroku.settings(locals())
+    import django_heroku 
+    django_heroku.settings(locals())
 
 #公式ドキュメントより、DATABASE_URL環境変数の値が解析され、Djangoが理解できるものに変換されます。Djangoとpsqlの接続
 db_from_env = dj_database_url.config(conn_max_age=600,ssl_require=True)

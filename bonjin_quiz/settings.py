@@ -22,11 +22,11 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '@wexwz&y0i0wt5n2usd!vv5@ujfmg@rb&(&0md-eq0lpn$oeso'
+#SECRET_KEY = '@wexwz&y0i0wt5n2usd!vv5@ujfmg@rb&(&0md-eq0lpn$oeso'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
-#DEBUG = False
+#DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['*']
 
@@ -87,27 +87,28 @@ WSGI_APPLICATION = 'bonjin_quiz.wsgi.application'
 #}
 
 
-#DATABASES = {
-#    'default':{
-#        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-#        'NAME': 'quize_user',
-#        'USER': 'postgres',
-#        'PASSWORD': 'mecmecmec',
-#        'HOST': '127.0.0.1',
-#        'PORT': '5432',
-#    }
-#}
-
 DATABASES = {
     'default':{
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'dd8g7h70omceog',
-        'USER': 'phvhozisfnxjjh',
-        'PASSWORD': 'ff4cc461703980bdd1f20271a9e0e86bb200f39bf0b98a8130da03eab110593b',
-        'HOST': 'ec2-34-231-56-78.compute-1.amazonaws.com',
+        'NAME': 'quize_user',
+        'USER': 'postgres',
+        'PASSWORD': 'mecmecmec',
+        'HOST': '127.0.0.1',
         'PORT': '5432',
     }
 }
+
+'''DATABASES = {
+    'default':{
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'dfmnnn4prfva2t',
+        'USER': 'zrfdrseesarbqg',
+        'PASSWORD': '3eb0198010d307aa099c56ec3ba06ad798651ae96d83860611a1f0b8a0032025',
+        'HOST': 'ec2-52-21-247-176.compute-1.amazonaws.com',
+        'PORT': '5432',
+    }
+}
+'''
 
 # Password validation
 # https://docs.djangoproject.com/en/3.1/ref/settings/#auth-password-validators

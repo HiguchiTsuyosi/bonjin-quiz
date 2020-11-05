@@ -28,28 +28,8 @@ def signup(request):
 
     return redirect('signup_success')
 
-    '''
-    username=request.POST['username_data']
-    password=request.POST['password_data']
-
-    redirect_url=reverse('signup_success')
-    parameter=urlencode({'username':username,'password':password})
-    url=f'{redirect_url}?{parameter}'
-
-    return redirect(url)
-    '''
-
-
 def signup_success(request):
     return render(request,'signup_success.html')
-    '''
-    username=request.GET.get('username')
-    password=request.GET.get('password')
-    user=authenticate(request,username=username,password=password)
-    login(request,user)
-    return redirect('home')
-    '''
-
 
 
 def loginview(request):
@@ -91,8 +71,8 @@ def question(request):
     if 'ques_num' in request.session:
         request.session['ques_num']+=1
         #本番では消す
-        if request.session['ques_num']==6:
-            request.session['ques_num']=1
+        #if request.session['ques_num']==6:
+        #    request.session['ques_num']=1
     else:
         request.session['ques_num']=1
     #正解数
